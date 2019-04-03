@@ -9,7 +9,9 @@ import com.imust.interceptor.UserLoginInterceptor;
 
 @Configuration
 public class WebConfig extends WebMvcConfigurerAdapter {
-
+/*
+    new changes have been made.
+ */
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
