@@ -43,6 +43,13 @@ public class UserController {
 		model.addAttribute("userinfo",userinfo);
 		return "user-show";
 	}
+	//查看车牌信息
+	@RequestMapping("/showPlate")
+    public String getPlateById(@RequestParam("id")int id,Model model){
+	    Users userinfo = userService.getPlateNumById(id);
+	    model.addAttribute("userinfo",userinfo);
+	    return "NewPlatNum";
+    }
 	@RequestMapping("/logout")
 	public String logout(HttpSession session) {
 		session.removeAttribute("LogUser");
@@ -59,7 +66,7 @@ public class UserController {
 	
 	//修改用户手机和邮箱
 	@RequestMapping("/update-user")
-	public String userUpdate(@ModelAttribute("users") Users user,Model model){
+	public String userUpdate(@ModelAttribute("user") Users user,Model model){
 		userService.updateUser(user);
 		Users userinfo = userService.getUserById(user.getId());
 		model.addAttribute("userinfo",userinfo);
@@ -84,4 +91,17 @@ public class UserController {
 		}
 		return "password";
 	}
+	//新车牌页
+//    @RequestMapping("/NewPlatNum")
+//    public String NewPlatNum(){
+//	    return "NewPlatNum";
+//    }
+	//增加新车牌
+    @RequestMapping("/updatePlatNum")
+    public String updatePlatNum(@ModelAttribute("users") Users user,Model model){
+        userService.updatePlatNum(user);
+        Users userinfo = userService.getPlateNumById(user.getId());
+        model.addAttribute("userinfo",userinfo);
+        return "NewPlatNum";
+    }
 }

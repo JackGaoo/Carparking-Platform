@@ -59,6 +59,15 @@ public class UserService {
 			return false;
 		}
 	}
+    public boolean updatePlatNum(Users user) {
+        try {
+            userMapper.updatePlatNum(user);
+            return true;
+        } catch (Exception e) {
+            // TODO: handle exception
+            return false;
+        }
+    }
 	//名称模糊查询用户
 	public List<Users> getByName(String tmpName) {
 		String name = "%"+tmpName+"%";
@@ -86,7 +95,12 @@ public class UserService {
 		// TODO Auto-generated method stub
 		return userMapper.findUserById(id);
 	}
-	
+	//根据id查询车牌
+	public Users getPlateNumById(int id) {
+		// TODO Auto-generated method stub
+		return userMapper.getPlateNumById(id);
+	}
+
 	//添加用户
 	public boolean addUser(Users users) {
 		try {
