@@ -51,4 +51,7 @@ public interface UserMapper {
     //查询车牌
     @Select("select plate_num from user where id = #{id}")
     Users getPlateNumById(@Param("id") int id);
+    //插入新车牌 重复则更新
+    @Insert("insert into user (plate_num) values (#{plate_num}) on duplicate key update plate_num = #{plate_num} where id = #{id}")
+    public void insertPlate(Users user);
 }

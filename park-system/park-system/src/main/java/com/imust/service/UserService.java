@@ -111,4 +111,14 @@ public class UserService {
 			return false;
 		}
 	}
+	//插入新车牌
+	public boolean insertPlate(Users users) {
+		try {
+			userMapper.insertPlate(users);
+			return true;
+		} catch (Exception e) {
+			// TODO: handle exception
+			return false;
+		}
+	}
 }

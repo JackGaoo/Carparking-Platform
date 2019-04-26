@@ -20,17 +20,16 @@
         <div class="bread">当前位置：
             <a href="#l">首页</a> >
             <a href="#">个人中心</a> >
-            <a href="#">修改密码</a>
+            <a href="#">修改密码</a> >
             <a href="#">新增车牌</a>
         </div>
         <span th:replace="/common/userinfo :: userer"></span>
         <div class="help-r fr">
             <div class="help-item-title">个人信息</div>
             <div class="help-main">
-                <p><span class="nice">主车牌：</span><input type="text" name="plate_num" th:value="${userinfo.plate_num}" disabled></p>
                 <form action="/user/updatePlatNum" method="post">
                     <input type="hidden" name="id" th:value="${session.LogUser.id}" />
-
+                    <p><span class="nice">主车牌：</span><input type="text" name="plate_num" th:value="${userinfo.plate_num}" disabled></p>
                     <p><span class="nice">新车牌：</span><input type="text" name="plate_num"></p>
                     <input class="save" type="submit" value="确认添加"/>
                 </form>
