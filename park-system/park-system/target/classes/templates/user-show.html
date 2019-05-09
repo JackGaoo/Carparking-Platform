@@ -34,11 +34,11 @@
 					</p>
 					<p>
 						<span class="nice">用户积分：</span>
-						<input readonly="readonly" type="text" th:value="${userinfo.point}">
+						<input readonly="readonly" type="text" th:value="${userinfo.point}" disabled>
 					<span class="nice">享受折扣：</span>
-					<input th:if="${userinfo.point<100}" readonly="readonly" type="text" value="无折扣">
-					<input th:if="${userinfo.point>=100&&userinfo.point<300}" readonly="readonly" type="text" value="9折">
-					<input th:if="${userinfo.point>=300&&userinfo.point<500}" readonly="readonly" type="text" value="8折">
+					<input th:if="${userinfo.point<100}" readonly="readonly" type="text" value="无折扣" disabled>
+					<input th:if="${userinfo.point>=100&&userinfo.point<300}" readonly="readonly" type="text" value="9折" disabled>
+					<input th:if="${userinfo.point>=300&&userinfo.point<500}" readonly="readonly" type="text" value="8折" disabled>
 					<input th:if="${userinfo.point>=500}" readonly="readonly" type="text" value="7折">
 					<span style="color: red">注：100~300享9折,300~500享8折,500以上享7折</span>
 					</p>

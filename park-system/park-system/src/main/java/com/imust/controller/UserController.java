@@ -84,5 +84,4 @@ public class UserController {
 		}
 		return "password";
 	}
-	//自己的电脑试一下
 }

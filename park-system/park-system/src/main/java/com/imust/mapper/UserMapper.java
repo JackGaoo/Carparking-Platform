@@ -2,22 +2,17 @@ package com.imust.mapper;
 
 import java.util.List;
 
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 import com.imust.entity.Users;
 @Mapper
 public interface UserMapper {
 	
 	//添加信息
-	@Insert("insert into User(name,phone,plate_num,password,createDate,stauts) values(#{name},#{phone},#{plate_num},#{password},SYSDATE(),0)")
+	@Insert("insert into user(name,phone,plate_num,password,createDate,stauts) values(#{name},#{phone},#{plate_num},#{password},SYSDATE(),0)")
     public void insertUsers(Users users);
 	
 	//删除信息
-	@Delete("delete from User where id=#{id}")
+	@Delete("delete from user where id=#{id}")
 	public void deleteUserById(int id);
 	
 	//修改信息
@@ -50,4 +45,13 @@ public interface UserMapper {
 	//登陆使用
 	@Select("select * from user where name=#{name} and password = #{password}")
 	List<Users> findUserByNameAndPwd(@Param("name") String adminName,@Param("password") String password);
+	//新增车牌
+    @Update("update user set plate_num = concat(plate_num,',#{plate_num}') where id = #{id}")
+    public void updatePlatNum(Users user);
+    //查询车牌
+    @Select("select plate_num from user where id = #{id}")
+    Users getPlateNumById(@Param("id") int id);
+    //插入新车牌 重复则更新
+    @Insert("insert into user (plate_num) values (#{plate_num}) on duplicate key update plate_num = #{plate_num} where id = #{id}")
+    public void insertPlate(Users user);
 }
