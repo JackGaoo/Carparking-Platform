@@ -63,15 +63,16 @@ input{ outline:none; border:none;}
 }
 /*头部*/
 .top{
-	height: 30px;
-	line-height: 30px;
-	background: #f7f7f7;
-	border-bottom: #eee solid 1px;
+	/*height: 30px;*/
+	/*line-height: 30px;*/
+	/*background: #f7f7f7;*/
+	/*border-bottom: #eee solid 1px;*/
 }
 .top li{
 	float: left;
 }
 .top a{
+	text-align: right;
 	padding: 0 15px;
 	border-right: 1px solid #666;
 }

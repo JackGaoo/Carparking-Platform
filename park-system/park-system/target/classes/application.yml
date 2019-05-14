@@ -12,6 +12,7 @@ spring:
         username: root
         password: 123456
         driver-class-name: com.mysql.jdbc.Driver
+
 #服务器端口
 server: 
   port: 3306

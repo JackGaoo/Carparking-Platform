@@ -29,7 +29,12 @@ public class IndexController {
 		model.addAttribute("noticeList",noticeList);
 		return "index";
 	}
-	
+
+	@RequestMapping("/Home")
+	public String Home(){
+		return "HomePage";
+	}
+
 	@RequestMapping("/admin-index")
 	public String index2(Model model) {
 		return "admin/index";

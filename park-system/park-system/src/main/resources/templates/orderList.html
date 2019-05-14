@@ -20,7 +20,7 @@
 <div class="help-wrap">
 	<div class="container clearfix">
 		<div class="bread">当前位置：
-			<a href="index.html">首页</a> >
+			<a th:href="@{'/Home'}">首页</a> >
 			<a href="#">订单管理</a> >
 			<a href="#">我的订单</a>
 		</div>
@@ -66,6 +66,5 @@
 	</div>
 </div>
 
-<span th:replace="/common/foot :: footer"></span>
 </body>
 </html>
