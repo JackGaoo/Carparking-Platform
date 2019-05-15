@@ -94,7 +94,14 @@ public class UserService {
 	public Users getUserById(int id) {
 		// TODO Auto-generated method stub
 		return userMapper.findUserById(id);
+
 	}
+	//根据用户名查找用户
+	public List<Users> seletByName(String name) {
+		// TODO Auto-generated method stub
+		return userMapper.seletByName(name);
+	}
+
 	//根据id查询车牌
 	public Users getPlateNumById(int id) {
 		// TODO Auto-generated method stub

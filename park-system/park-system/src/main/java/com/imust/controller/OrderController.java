@@ -46,9 +46,19 @@ public class OrderController {
 		}
 		return "redirect:/order/showOrder";
 	}
-
+	//取消订单
+	@RequestMapping("/cancel")
+	public String CancelOrder(@RequestParam("id") int id){
+		Order order = orderService.getById(id);
+		order.setStatus(2);
+		if(orderService.updateOrderStatus(order)) {
+			Park park = parkService.getById(order.getPark_id());
+			park.setStatus(0);
+			parkService.updateCarStatus(park);
+		}
+		return "redirect:/order/showOrder";
+	}
 	//删除订单
-
 	@RequestMapping(value = "/del/{id}" , method = RequestMethod.GET)
 	public String delOrder(@PathVariable int id){
 		orderService.delOrder(id);

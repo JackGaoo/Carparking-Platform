@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.imust.entity.Users;
 import com.imust.service.UserService;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/user")
 public class UserController {
@@ -36,6 +38,8 @@ public class UserController {
 		}
 		return "join";
 	}
+	//重复用户不能注册
+
 	//查看个人信息
 	@RequestMapping("/user-show")
 	public String getById(@RequestParam("id")int id,Model model) {
@@ -58,11 +62,17 @@ public class UserController {
 
 	//注册用户
 	@RequestMapping("/user-save")
-	public String saveUser(@ModelAttribute("users") Users users){
-		if(userService.addUser(users)) {
+	public String saveUser(@ModelAttribute("users") Users users,String name,Model model){
+		List<Users> res = userService.seletByName(name);
+		if(res.size()==0) {
+			userService.addUser(users);
 			return "register-ok";
+
+		}else{
+			model.addAttribute("msg", "该用户已被占用");
+			return "redirect:/join#toregister";
 		}
-		return "404";
+
 	}
 
 	//修改用户手机和邮箱

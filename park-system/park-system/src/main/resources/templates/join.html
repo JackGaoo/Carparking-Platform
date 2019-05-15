@@ -12,7 +12,7 @@
 		color: red;
 	}
 </style>
-<div id="container_demo" >2
+<div id="container_demo" >
 	<a class="hiddenanchor" id="toregister"></a>
 	<a class="hiddenanchor" id="tologin"></a>
 	<div id="wrapper">
@@ -44,27 +44,30 @@
 				<h1>注册</h1> 
 				<p> 
 					<label for="usernamesignup" class="uname" data-icon="u">用户名</label>
-					<input id="usernamesignup" name="name" required="required" type="text" placeholder="用户名" onblur="checkUser()"/>
+					<input id="usernamesignup" name="name" type="text" placeholder="用户名" onblur="checkUser()" required/>
 					<span><div id="user_prompt">用户名由英文字母和数字组成的4-16位字符，以字母开头</div></span>
+				<p>
+					<span style="color: red;font-size: 18px" th:text="${msg}"></span>
+				</p>
 				</p>
 				<p> 
 					<label for="tel" class="youmail">联系电话</label>
-					<input id="tel" name="phone" class="phone" required="required" type="tel" placeholder="联系电话" onblur="checkMobile()"/>
+					<input id="tel" name="phone" class="phone" required type="tel" placeholder="联系电话" onblur="checkMobile()"/>
 				<div id="mobile_prompt">电话号码为11位</div>
 				</p>
 				<p> 
 					<label for="academy" class="youmail">车牌号码</label>
-					<input id="academy" name="plate_num" required="required" type="tel" placeholder="车牌号码" onblur="checkPlate()"/>
+					<input id="academy" name="plate_num" required type="tel" placeholder="车牌号码" onblur="checkPlate()"/>
 				<div id="plate_prompt">车牌号格式：汉字 + A-Z + 5位A-Z或0-9</div>
 				</p>
 				<p> 
 					<label for="passwordsignup" class="youpasswd" data-icon="p">密码</label>
-					<input id="passwordsignup" name="password" required="required" type="password" placeholder="密码" onblur="checkPwd()"/>
+					<input id="passwordsignup" name="password" required type="password" placeholder="密码" onblur="checkPwd()"/>
 					<span><div id="pwd_prompt">密码由英文字母和数字组成的4-10位字符</div></span>
 				</p>
 				<p>
 					<label for="repasswordsignup" class="youpasswd2" data-icon="p">确认密码</label>
-					<input id="repasswordsignup" name="password2" required="required" type="password" placeholder="请再次输入密码" onblur="checkRepwd()"/>
+					<input id="repasswordsignup" name="password2" required type="password" placeholder="请再次输入密码" onblur="checkRepwd()"/>
 					<span><div id="repwd_prompt"></div></span>
 				</p>
 				<p>

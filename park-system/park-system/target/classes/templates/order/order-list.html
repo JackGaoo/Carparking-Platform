@@ -47,7 +47,8 @@
 				<td th:text="${order.total}"></td>
 				<td class="td-status">
 				<span class="label radius"  th:if="${order.status}==0">待付款</span>
-				<span class="label radius label-success"  th:if="${order.status}!=0">订单完成</span></td>
+				<span class="label radius"  th:if="${order.status}==2">订单取消</span>
+				<span class="label radius label-success"  th:if="${order.status}==1">订单完成</span></td>
 				<td class="td-manage">
 				<a title="删除" href="javascript:;" onclick="order_del(this)"
 				class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a>

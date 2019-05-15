@@ -51,10 +51,12 @@
 				      <td th:text="${order.total}"></td>
 				      <td>
 				      	<span th:if="${order.status==0}" style="color: red">待付款</span>
+				      	<span th:if="${order.status==2}" style="color: gray">订单取消</span>
 				      	<span th:if="${order.status==1}" style="color: green;">订单完成</span>
 				      </td>
 				      <td>
 				      	<a th:if="${order.status==0}"  th:href="@{'/order/jiesuan?id='+${order.id}}">结算</a>
+				      	<a th:if="${order.status==0}"  th:href="@{'/order/cancel?id='+${order.id}}">||取消</a>
 				      	<a th:if="${order.status==1}"  th:href="@{/order/del/{id}(id=${order.id})}">删除</a>
 						  <!--/order/del/{id}(id=${order.id})-->
 				      </td>
