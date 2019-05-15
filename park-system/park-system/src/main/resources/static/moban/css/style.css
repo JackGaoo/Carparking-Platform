@@ -55,32 +55,44 @@ ul {
 label {
 	margin: 0;
 }
-
-
+/*.thumbnail{*/
+/*	overflow: hidden;*/
+/*}*/
+/*.thumbnail img{*/
+/*	-webkit-transition: all 1s ease ;*/
+/*}*/
+/*.thumbnail img:hover{*/
+/*	width: 500px;*/
+/*	height: 400px;*/
+/*}*/
 /*-- header --*/
 .btn {
-	border-radius: 0;
+	letter-spacing: .8px;
+	font-size: 16px;
+	padding: 10px 16px;
 	text-transform: uppercase;
 	font-family: Montserrat,sans-serif;
 	font-weight: 400;
+	-webkit-font-smoothing:subpixel-antialiased;
 	-webkit-transition: all .3s ease-in-out;
 	-moz-transition: all .3s ease-in-out;
 	transition: all .3s ease-in-out;
-	width: 100px;
+	width: 250px;
 	height: 50px;
-	line-height: 35px;
+	line-height: 30px;
 	display: inline-block;
 	position: relative;
-	left: 50%;
 	top: -100px;
 	z-index: 999;
+	vertical-align:middle ;
 	text-align: center;
-	padding:6px 12px;
+	/*padding:6px 12px;*/
 }
 .btn-skin {
+	border: none;
+	border-radius: 0;
 	color: #fff;
 	background-color: #5d5454;
-	border-color: #000;
 }
 
 
@@ -657,8 +669,8 @@ b.fa.fa-caret-right {
 }
 
 .banner-top2 {
-	background: url(../images/3.jpg)  no-repeat 0px 0px;
-	background-size: cover;
+	background: url(../images/IMG_69113.jpg)  no-repeat 0px 0px;
+	background-size: 100% 100%;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -667,8 +679,8 @@ b.fa.fa-caret-right {
 }
 
 .banner-top3 {
-	background: url(../images/4.jpg)  no-repeat 0px 0px;
-	background-size: cover;
+	background: url(../images/lamborghini-city-cars_3.jpg)  no-repeat 0px 0px;
+	background-size: 100% 100%;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
