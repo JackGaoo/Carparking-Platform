@@ -34,6 +34,7 @@
 					<input type="submit" value="登录" /> 
 				</p>
 				<p class="change_link">
+					管理员--><a href="/admin/login" class="to_register">管理员</a>
 					不是成员?<a href="#toregister" class="to_register">加入我们</a>
 				</p>
 			</form>
@@ -46,9 +47,9 @@
 					<label for="usernamesignup" class="uname" data-icon="u">用户名</label>
 					<input id="usernamesignup" name="name" type="text" placeholder="用户名" onblur="checkUser()" required/>
 					<span><div id="user_prompt">用户名由英文字母和数字组成的4-16位字符，以字母开头</div></span>
-				<p>
-					<span style="color: red;font-size: 18px" th:text="${msg}"></span>
-				</p>
+<!--				<p>-->
+<!--					<span style="color: red;font-size: 18px" th:text="${msg}"></span>-->
+<!--				</p>-->
 				</p>
 				<p> 
 					<label for="tel" class="youmail">联系电话</label>
@@ -74,7 +75,7 @@
 <!--					<span style="color: red;font-size: 18px" th:text="${msg}"></span>-->
 				</p>
 				<p class="signin button"> 
-					<input type="submit" value="注册"/> 
+					<input type="submit" value="注册"/>
 				</p>
 				<p class="change_link">  
 					已经是成员?<a href="#tologin" class="to_register"> 去登录 </a>
@@ -100,6 +101,7 @@
 		var reg=/^[a-zA-Z][a-zA-Z0-9]{3,15}$/;
 		if(reg.test(user)==false){
 			userId.innerHTML="用户名不正确";
+			alert("请输入正确用户名");
 			return false;
 		}
 		return true;
@@ -112,6 +114,7 @@
 		var reg=/^[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[A-Z]{1}[A-Z0-9]{4}[A-Z0-9挂学警港澳]{1}$/;
 		if(reg.test(plate)==false){
 			plateId.innerHTML="车牌号格式不正确";
+			alert("请输入正确格式车牌号");
 			return false;
 		}
 		return true;
@@ -124,6 +127,7 @@
 		var reg=/^[a-zA-Z0-9]{4,10}$/;
 		if(reg.test(pwd)==false){
 			pwdId.innerHTML="密码不能含有非法字符，长度在4-10之间";
+			alert("请输入正确格式的密码");
 			return false;
 		}
 		return true;
@@ -136,6 +140,7 @@
 		repwdId.innerHTML="";
 		if(pwd!=repwd){
 			repwdId.innerHTML="两次输入的密码不一致";
+			alert("两次输入的密码不一致");
 			return false;
 		}
 		return true;
@@ -160,6 +165,7 @@
 		var regMobile=/^1\d{10}$/;
 		if(regMobile.test(mobile)==false){
 			mobileId.innerHTML="手机号码不正确，请重新输入";
+			alert("请输入正确格式售手机号");
 			return false;
 		}
 		mobileId.innerHTML="";

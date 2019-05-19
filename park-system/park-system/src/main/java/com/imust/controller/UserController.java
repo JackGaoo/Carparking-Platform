@@ -12,8 +12,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.imust.entity.Users;
 import com.imust.service.UserService;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/user")
@@ -62,14 +64,12 @@ public class UserController {
 
 	//注册用户
 	@RequestMapping("/user-save")
-	public String saveUser(@ModelAttribute("users") Users users,String name,Model model){
+	public String saveUser(@ModelAttribute("users") Users users, String name, Model model){
 		List<Users> res = userService.seletByName(name);
 		if(res.size()==0) {
 			userService.addUser(users);
 			return "register-ok";
-
 		}else{
-			model.addAttribute("msg", "该用户已被占用");
 			return "redirect:/join#toregister";
 		}
 
