@@ -16,19 +16,19 @@ import com.imust.service.NoticeService;
 @Controller
 public class IndexController {
 	
-	@Autowired
-	private NoticeService noticeService;
+//	@Autowired
+//	private NoticeService noticeService;
 	
 	@RequestMapping("/404")
 	public String error() {
 		return "404";
 	}
-	@RequestMapping("/index")
-	public String index(Model model) {
-		List<Notice> noticeList = noticeService.getAll();
-		model.addAttribute("noticeList",noticeList);
-		return "index";
-	}
+//	@RequestMapping("/index")
+//	public String index(Model model) {
+//		List<Notice> noticeList = noticeService.getAll();
+//		model.addAttribute("noticeList",noticeList);
+//		return "index";
+//	}
 
 	@RequestMapping("/Home")
 	public String Home(){

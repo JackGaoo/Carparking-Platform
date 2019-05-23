@@ -10,11 +10,11 @@ import com.imust.mapper.NoticeMapper;
 
 @Service
 public class NoticeService {
-	
+
 	@Autowired
 	private NoticeMapper noticeMapper;
-	
-	
+
+
 	//通过id修改状态
 	public boolean updateNotice(Notice notice) {
 		try {
@@ -25,7 +25,7 @@ public class NoticeService {
 			return false;
 		}
 	}
-	
+
 	//名称模糊查询用户
 	public List<Notice> getByTitle(String tmpName) {
 		String title = "%"+tmpName+"%";
@@ -41,7 +41,7 @@ public class NoticeService {
 		// TODO Auto-generated method stub
 		return noticeMapper.findAllNotice();
 	}
-	
+
 	//删除
 	public boolean delNotice(int id) {
 		try {
@@ -52,7 +52,7 @@ public class NoticeService {
 			return false;
 		}
 	}
-	
+
 	//添加
 	public boolean addNotice(Notice notice) {
 		try {

@@ -46,6 +46,6 @@ public class Notice {
 	public void setAdmin_name(String admin_name) {
 		this.admin_name = admin_name;
 	}
-	
-	
+
+
 }
